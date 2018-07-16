@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+
+<body>
+	<canvas id="canvas" width="700" height="700"></canvas>
+	
+	<script>
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "Red";
+	// Head of robot
+	ctx.fillRect(100, 100, 50, 50);
+	// Neck of robot
+	ctx.fillRect(120, 150, 10, 10);
+	ctx.fillRect(120, 160, 10, 10); 
+	ctx.fillRect(120, 170, 10, 10);
+	// Left arm of robot
+	ctx.fillRect(110, 170, 10, 10);
+	ctx.fillRect(100, 170, 10, 10);
+	ctx.fillRect(90, 170, 10, 10);
+	ctx.fillRect(80, 170, 10, 10);
+	ctx.fillRect(70, 170, 10, 10);
+	ctx.fillRect(60, 170, 10, 10);
+	// Right arm of robot
+	ctx.fillRect(120, 170, 10, 10);
+	ctx.fillRect(130, 170, 10, 10);
+	ctx.fillRect(140, 170, 10, 10);
+	ctx.fillRect(150, 170, 10, 10);
+	ctx.fillRect(160, 170, 10, 10);
+	ctx.fillRect(170, 170, 10, 10);
+	ctx.fillRect(180, 170, 10, 10);
+	// Torso of robot
+	ctx.fillRect(90, 180, 70, 70);
+	// Left leg of robot
+	ctx.fillRect(90, 250, 10, 10);
+	ctx.fillRect(90, 260, 10, 10);
+	ctx.fillRect(90, 270, 10, 10)
+	ctx.fillRect(90, 280, 10, 10)
+	ctx.fillRect(90, 290, 10, 10);
+	// Right left of robot
+	ctx.fillRect(150, 250, 10, 10);
+	ctx.fillRect(150, 260, 10, 10);
+	ctx.fillRect(150, 270, 10, 10);
+	ctx.fillRect(150, 280, 10, 10);
+	ctx.fillRect(150, 290, 10, 10);
+	
+	// Draw three rectangles using three colors
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	// Draw a red rectangle
+	ctx.fillStyle = "red";
+	ctx.fillRect(200, 200, 50, 100);
+	// Draw a green rectangle
+	ctx.fillStyle = "green";
+	ctx.fillRect(250, 200, 50, 100);
+	// Draw a blue rectangle
+	ctx.fillStyle = "blue";
+	ctx.fillRect(300, 200, 50, 100);
+	
+	// Draw a stickman
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	ctx.lineWidth = 4;
+	// Head of stickman
+	ctx.strokeRect(400, 200, 20, 20);
+	// neck and body of stickman 
+	ctx.beginPath();
+	ctx.moveTo(410, 220);
+	ctx.lineTo(410, 280);
+	ctx.stroke();
+	// Left arm of stickman 
+	ctx.beginPath();
+	ctx.moveTo(410, 230);
+	ctx.lineTo(380, 250);
+	ctx.stroke();
+	// Right arm of stickman
+	ctx.beginPath();
+	ctx.moveTo(410, 230);
+	ctx.lineTo(440, 250);
+	ctx.stroke();
+	// Left leg of stickman 
+	ctx.beginPath();
+	ctx.moveTo(410, 280);
+	ctx.lineTo(390, 300);
+	ctx.stroke();
+	// Right leg of stickman
+	ctx.beginPath();
+	ctx.moveTo(410, 280);
+	ctx.lineTo(430, 300);
+	ctx.stroke();
+	
+	// Draw a snowman + Programming challenge #1
+	var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+	
+	var circle = function (x, y, radius, fillCircle) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+      if (fillCircle) {
+        ctx.fill();
+      } else {
+        ctx.stroke();
+      }
+    };
+    var drawSnowman = function (x, y) {
+      ctx.fillStyle = "Black";
+      ctx.lineWidth = 4;
+	
+	// Size of the circles
+	  circle(x + 50, y + 110, 40, false);
+      circle(x + 50, y + 40, 30, false);
+      circle(x + 40, y + 35, 5, true);
+      circle(x + 60, y + 35, 5, true);
+      circle(x + 50, y + 90, 5, true);
+      circle(x + 50, y + 110, 5, true);
+      circle(x + 50, y + 130, 5, true);
+      ctx.fillStyle = "Orange";
+      circle(x + 50, y + 45, 5, true);
+    };
+	// Call the function to draw a Snowman at coordinates 440, 180
+    drawSnowman(440, 180);
+	
+	// Programming challenge #2
+	var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var drawPoints = function (points) {
+      ctx.beginPath();
+      ctx.moveTo(points[0][0], points[0][1]);
+      for (var i = 1; i < points.length; i++) {
+        ctx.lineTo(points[i][0], points[i][1]);
+      }
+      ctx.stroke();
+    };
+    var mysteryPoints = [[50, 50], [50, 100], [25, 120], [100, 50], [70, 90], [100, 90], [70, 120]];
+    drawPoints(mysteryPoints);
+	</script>
+</body>
+</html>
